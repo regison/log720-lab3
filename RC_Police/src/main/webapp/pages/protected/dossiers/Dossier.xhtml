@@ -1,11 +1,10 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
-<%@ taglib uri='/WEB-INF/tlds/template.tld' prefix='template' %>
-
-
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:p="http://primefaces.org/ui"
+xmlns:template="/WEB-INF/tlds/template.tld"
+>
 
 
 <template:insert template='/shared/templates/baseTemplate.jsp'>
@@ -23,7 +22,7 @@
 		<jsp:useBean id="form" class="ca.etsmtl.log720.RC_Police.servlets.dossiers.DossierFormValidation" scope="request" />
 		
 		<div class="page-header" >
-		  <h1><%= dossier.getRn_Descriptor() %></h1>
+		  <h1>#{DossierView.rn_Descriptor}</h1>
 		</div>
 		<div class="col-xs-12">
 						
@@ -263,6 +262,32 @@
 													</tbody>
 												</table> --%>
 											
+												<h:form id="form">
+												    <p:growl id="msgs" showDetail="true" />
+												 
+												    <p:dataTable id="basicDT" var="car" value="#{dtSelectionView.cars1}">
+												        <f:facet name="header">
+												            Basic
+												        </f:facet>
+												        <p:column headerText="Id">
+												            <h:outputText value="#{car.id}" />
+												        </p:column>
+												        <p:column headerText="Year">
+												            <h:outputText value="#{car.year}" />
+												        </p:column>
+												        <p:column headerText="Brand">
+												            <h:outputText value="#{car.brand}" />
+												        </p:column>
+												        <p:column headerText="Color">
+												            <h:outputText value="#{car.color}" />
+												        </p:column>
+												        <p:column style="width:32px;text-align: center">
+												             <p:commandButton update=":form:carDetail" oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View">
+												                <f:setPropertyActionListener value="#{car}" target="#{dtSelectionView.selectedCar}" />
+												            </p:commandButton>
+												        </p:column>
+												    </p:dataTable>
+												</h:form>
 											</div>
 										</div>
 									</div>
@@ -288,6 +313,10 @@
 	<template:put name='footer' content='/shared/footer.jsp' />
 
 </template:insert>
+
+</html>
+
+
 
 
 

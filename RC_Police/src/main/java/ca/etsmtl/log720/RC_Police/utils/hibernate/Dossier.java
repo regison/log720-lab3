@@ -52,7 +52,7 @@ public class Dossier {
 	}
 	@Column(name = "idNiveau", unique = false, nullable = true)
 	public int getIdNiVeau() {
-		return idNiVeau;s
+		return idNiVeau;
 	}
 	public void setIdNiVeau(int idNiVeau) {
 		this.idNiVeau = idNiVeau;

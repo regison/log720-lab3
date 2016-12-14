@@ -1,7 +1,13 @@
 package ca.etsmtl.log720.RC_Police.Beans;
 
-public abstract class EntityBean {
+import java.io.Serializable;
 
+public abstract class EntityBean implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected Integer id;
 	private String Rn_Descriptor;
 	

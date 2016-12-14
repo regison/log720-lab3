@@ -6,11 +6,22 @@ package ca.etsmtl.log720.RC_Police.Beans;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
 /**
  * @author csimon
  *
  */
+
+@ManagedBean(name="DossierView")
+@ViewScoped
 public class DossierBean extends EntityBean{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	String nom, prenom, noPlaque, noPermis;
 

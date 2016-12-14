@@ -37,7 +37,7 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>3.0.0</version>
         <configuration>
-          <webappDirectory>E:\apache-tomcat-7.0.73\webapps\rcpolice</webappDirectory>
+          <webappDirectory>C:\apache\apache-tomcat-7.0.72\webapps\rcpolice</webappDirectory>
         </configuration>
       </plugin>
     </plugins>
@@ -103,6 +103,14 @@
 		<artifactId>hibernate-commons-annotations</artifactId>
 		<version>3.0.0.GA</version>
 	</dependency>
+	
+		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
+	<dependency>
+	    <groupId>org.primefaces</groupId>
+	    <artifactId>primefaces</artifactId>
+	    <version>6.0</version>
+	</dependency>
+	
   </dependencies>
   
   
